@@ -1,15 +1,19 @@
+#библиотека для работы с json
 import json
 
-counter=0
-close=True
+# переменные 
+counter=0 # счетчик
+close=True # переменная для повторного вывода условий , пока не ввели 5
 
+# переменная cars , содержит данные json файла
 with open("sds.json","r",encoding="utf-8") as file:
     cars=json.load(file)
 
+# функция , выводит условия
 def menu() : 
     print("- Вывести все записи n\n- Вывести запись по полю n\n- Добавить запись n\n- Удалить запись по полю n\n- Выйти из программы")
 
-
+# функция , выводит информацию о всех автомобилях
 def all() :   
     global counter
     for car in cars :
@@ -25,6 +29,8 @@ def all() :
 ''')
     counter+=1
 
+
+# функция , выводит информацию о конкретной машине
 def one_output() :
     global counter
     car_id_choice=int(input("введите ID автомобиля : "))
@@ -44,6 +50,8 @@ def one_output() :
             break
     counter+=1
 
+
+# функция , регистрирует аватомобиль в json файл
 def new() :
     global counter
     lkl=False
@@ -53,7 +61,7 @@ def new() :
             lkl=True
             break
     if lkl :
-        print("под данным id уже зарегеcтрирован автомобиль.")
+        print("под данным id уже зарегиcтрирован автомобиль.")
     else :
         name=input("введите марку автомобиля : ")
         manufacturer=input("введите производителя автомобиля : ")
@@ -73,6 +81,8 @@ def new() :
             json.dump(cars, output_file, ensure_ascii=False, indent=2)
     counter+=1
 
+
+# функция , удаляет выбранный автомобиль
 def delete() :
     global counter
     mkm=False
@@ -90,12 +100,14 @@ def delete() :
         print("автомобиля под данным id не существует.")
     counter+=1
 
+# функция , заканчивает работу программы
 def end() :
     global close
     print(f"количество циклов программы : {counter}\nзавершение работы программы...")
     close = False
 
-    
+# основная функция , обеспечивает работу программы с помощью if else .
+# выводит меню , пока не закроют программу 
 def main() :
     while close :
         menu()
@@ -113,4 +125,5 @@ def main() :
             end()
         else :print("некорректный ввод , попробуйте еще раз .")
 
+# вызов основной функции
 main()  
