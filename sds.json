@@ -1,0 +1,37 @@
+[
+  {
+    "id": 1,
+    "name": "Toyota Camry",
+    "manufacturer": "Toyota",
+    "is_petrol": true,
+    "tank_volume": "60"
+  },
+  {
+    "id": 2,
+    "name": "Honda Accord",
+    "manufacturer": "Honda",
+    "is_petrol": true,
+    "tank_volume": "58"
+  },
+  {
+    "id": 3,
+    "name": "Ford Mustang",
+    "manufacturer": "Ford",
+    "is_petrol": true,
+    "tank_volume": "61"
+  },
+  {
+    "id": 4,
+    "name": "Tesla Model S",
+    "manufacturer": "Tesla",
+    "is_petrol": false,
+    "tank_volume": "-"
+  },
+  {
+    "id": 5,
+    "name": "BMW X5",
+    "manufacturer": "BMW",
+    "is_petrol": true,
+    "tank_volume": "85"
+  }
+]
